@@ -1,0 +1,16 @@
+from sklearn.datasets import load_iris
+import pandas as pd
+
+# Tải dữ liệu Iris
+iris = load_iris()
+
+# Tạo DataFrame
+df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
+df['target'] = iris.target
+
+# Lưu thành file CSV
+df.to_csv('iris_data.csv', index=False)
+
+print("Đã tạo file iris_data.csv thành công!")
+print("Cấu trúc dữ liệu:")
+print(df.head())
